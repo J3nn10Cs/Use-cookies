@@ -24,7 +24,9 @@ Pasos para ejecutar en desarrollo
 
 6. Ejecutar el comando ```npm run dev```
 
-# Prod
+# Nota Usaer por defecto
+__usuario__ : jennifer@correo.com
+__password__ : 123456
 
 
 # Stage

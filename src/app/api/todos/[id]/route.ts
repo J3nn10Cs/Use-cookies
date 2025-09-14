@@ -1,3 +1,4 @@
+import { getUseServerSession } from '@/auth/actions/auth-action'
 import { PrismaClient } from '@/generated/prisma'
 import { NextResponse, NextRequest } from 'next/server'
 
@@ -8,6 +9,14 @@ interface Segments {
 }
 
 export async function GET(request: Request, segments : Segments) { 
+
+  const user = await getUseServerSession();
+  
+  if(!user){
+    return NextResponse.json('No autorizado', {
+      status : 401
+    })
+  }
 
   const id = segments.params.id
   const prima = new PrismaClient();
@@ -28,6 +37,14 @@ export async function GET(request: Request, segments : Segments) {
 }
 
 export async function PUT(request: Request, segments : Segments) { 
+
+  const user = await getUseServerSession();
+  
+  if(!user){
+    return NextResponse.json('No autorizado', {
+      status : 401
+    })
+  }
 
   const id = segments.params.id
   const prima = new PrismaClient();

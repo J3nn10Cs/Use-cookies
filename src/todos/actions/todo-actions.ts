@@ -37,25 +37,25 @@ export const toggleTodo = async ( id: string, complete : boolean ) : Promise<Tod
 
 }
 
-export const createTodo = async ( description: string ) => {
+// export const createTodo = async ( description: string ) => {
 
-  try {
-    const prisma = new PrismaClient();
+//   try {
+//     const prisma = new PrismaClient();
 
-    const todo = await prisma.todo.create({
-      data : {description}
-    })
+//     const todo = await prisma.todo.create({
+//       data : {description}
+//     })
 
-    revalidatePath('/dashboard/server-todos')
+//     revalidatePath('/dashboard/server-todos')
 
-    return todo
-  } catch (error) {
+//     return todo
+//   } catch (error) {
     
-    return {
-      message : 'Error al crear un todo'
-    }
-  }
-}
+//     return {
+//       message : 'Error al crear un todo'
+//     }
+//   }
+// }
 
 export const deleteTodo = async () => {
   const prisma = new PrismaClient();
