@@ -6,7 +6,7 @@ import { NextResponse, NextRequest } from 'next/server'
 export async function GET(request: Request) { 
 
   const prisma = new PrismaClient();
-
+//hola marci estuvo aqui - blackpink in your area
   await prisma.todo.deleteMany();
 
   await prisma.todo.createMany({

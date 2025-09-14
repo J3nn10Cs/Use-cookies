@@ -5,7 +5,9 @@ import React from 'react'
 import { BiCheckbox, BiCookie } from 'react-icons/bi'
 import { CgShoppingCart } from 'react-icons/cg'
 import { CiBookmarkCheck } from 'react-icons/ci'
+import { IoPersonOutline } from 'react-icons/io5'
 import { LiaStampSolid } from 'react-icons/lia'
+import { PiPerson } from 'react-icons/pi'
 
 export const SidebarItem = () => {
   const pathname = usePathname()
@@ -34,7 +36,12 @@ export const SidebarItem = () => {
       path : '/dashboard/product', 
       icon : <CgShoppingCart size={40}/>, 
       title : 'Productos'
-    }
+    },
+    { 
+      path : '/dashboard/profile', 
+      icon : <IoPersonOutline size={40}/>, 
+      title : 'Perfil'
+    },
   ]
 
   return (
